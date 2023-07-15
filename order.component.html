@@ -1,0 +1,66 @@
+<h1 class="h1">Place your Order Here!</h1>
+
+
+<mat-stepper>
+    <mat-step [stepControl]="firstFormGroup" >
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Enter your Details</ng-template>
+            <mat-form-field>
+                <mat-label>Mobile No.</mat-label>
+                <input matInput  formControlName="mobileNo" placeholder="+91" required (keyup)="valid($event)" maxlength="10">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Train No.</mat-label>
+                <input matInput formControlName="trainNo" placeholder="1111" required (keyup)="valid($event)" maxlength="4">
+            </mat-form-field>
+            <mat-form-field>
+            <mat-label>Time</mat-label>
+            <input matInput formControlName="journeytime" placeholder="1111" required (keyup)="valid($event)" maxlength="4">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Journy Date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="date">
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+
+
+    <mat-step [stepControl]="secondFormGroup" >
+        <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Choose Boarding Station</ng-template>
+            <mat-form-field>
+                <mat-label>Boarding Station</mat-label>
+                <select matNativeControl required formControlName="boardingStation">
+                    <option value="">Select</option>
+                    <option value="Haridwar">Haridwar</option>
+                    <option value="Dehradun">Dehradun</option>
+                  </select>
+                <!-- <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required> -->
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+
+
+
+
+    
+    <mat-step>
+        <ng-template matStepLabel>Menu</ng-template>
+        
+        
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <!-- <button mat-button (click)="stepper.reset()">Reset</button> -->
+        </div>
+    </mat-step>
+</mat-stepper>

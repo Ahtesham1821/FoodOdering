@@ -1,0 +1,23 @@
+.mat-stepper-horizontal {
+    margin-top: 100px;
+  }
+  
+  .mat-mdc-form-field {
+    margin-top: 50px;
+  }
+  
+  .h1{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 60px;
+  }
+  input::-webkit-outer-spin-button,
+
+input::-webkit-inner-spin-button {
+
+  -webkit-appearance: none;
+
+  margin: 0;
+
+}
